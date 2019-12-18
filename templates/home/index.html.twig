@@ -1,0 +1,34 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Little Big Map{% endblock %}
+
+{% block body %}
+    <div class="home-section">
+        <div class="components-container">
+            <div class="title-container">
+                {% if app.user %}
+                    <h1 class="title">Bonjour {{ app.user.firstName }}! </h1>
+                {% endif %}
+                {% if app.user is empty %}
+                    <h1 class="title">Bonjour toi !</h1>
+                {% endif %}
+            </div>
+            <div class="home-img">
+                <img class="map-corbineau"
+                     src="https://payload.cargocollective.com/1/2/64089/9613691/A-Map-of-Nantes-Antoine-Corbineau-Full-1000px_1000.jpg"
+                     alt="La carte de Nantes d'Alexis Corbineau">
+            </div>
+            <div class="home-footer">
+            {% if app.user %}
+                <h2>Voir ma Little Big Ville</h2>
+            {% endif %}
+            {% if app.user is empty %}
+                <h2>Bienvenue à Little Big City !</h2>
+                <p>Tu cherches un bon plan? Un endroit sympa pour sortir? De bonnes opportunités? Tu es au bon endroit
+                    !</p>
+                <p>Clique <a href="{{ path('createaccount') }}">ici </a> pour te connecter</p>
+            {% endif %}
+            </div>
+        </div>
+    </div>
+{% endblock %}
