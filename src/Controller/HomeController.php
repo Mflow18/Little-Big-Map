@@ -39,7 +39,7 @@ class HomeController extends AbstractController
             $entityManager->persist($user);
             $entityManager->flush();
 
-            return $this->redirectToRoute('success', [
+            return $this->redirectToRoute('home', [
                 'user' => $user,
             ]);
         }

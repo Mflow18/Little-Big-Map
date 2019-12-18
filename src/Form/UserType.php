@@ -49,7 +49,6 @@ class UserType extends AbstractType
                     'class' => Age::class,
                     'choice_label' => 'ageRange',
                     'expanded' => true,
-                    'multiple' => true,
                     'by_reference' => false,
                 ]
             )
@@ -58,7 +57,6 @@ class UserType extends AbstractType
                     'class' => Children::class,
                     'choice_label' => 'number',
                     'expanded' => true,
-                    'multiple' => true,
                     'by_reference' => false,
                 ])
             ->add('categories', EntityType::class,
@@ -75,7 +73,6 @@ class UserType extends AbstractType
                     'class' => Family::class,
                     'choice_label' => 'state',
                     'expanded' => true,
-                    'multiple' => true,
                     'by_reference' => false,
                 ]
             )
