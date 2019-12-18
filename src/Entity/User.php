@@ -62,7 +62,7 @@ class User implements UserInterface
     private $age;
 
     /**
-     * @ORM\OneToOne(targetEntity="App\Entity\Children", inversedBy="user", cascade={"persist", "remove"})
+     * @ORM\ManyToOne(targetEntity="App\Entity\Children", inversedBy="users")
      * @ORM\JoinColumn(nullable=false)
      */
     private $children;

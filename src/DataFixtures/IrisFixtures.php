@@ -25,10 +25,11 @@ class IrisFixtures extends Fixture
 
     public function load(ObjectManager $manager)
     {
-        foreach (self::IRIS as $key => $iris) {
+        foreach (self::IRIS as $key => $ir) {
             $iris = new Iris();
-            $iris->setName($iris['name']);
+            $iris->setName($ir['name']);
             $manager->persist($iris);
+            $this->addReference('iris_'.$key, $iris);
         }
         $manager->flush();
     }

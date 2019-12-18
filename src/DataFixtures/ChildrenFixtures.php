@@ -32,6 +32,7 @@ class ChildrenFixtures extends Fixture
             $child = new Children();
             $child->setNumber($number['number']);
             $manager->persist($child);
+            $this->addReference('children_'.$key, $child);
         }
         $manager->flush();
     }

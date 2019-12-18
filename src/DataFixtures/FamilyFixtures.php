@@ -27,8 +27,9 @@ class FamilyFixtures extends Fixture
     {
         foreach (self::FAMILY as $key => $state) {
             $family = new Family();
-            $family->setName($state['state']);
+            $family->setState($state['state']);
             $manager->persist($family);
+            $this->addReference('family_'.$key, $family);
         }
         $manager->flush();
     }

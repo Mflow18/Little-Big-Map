@@ -77,6 +77,7 @@ class AgeFixtures extends Fixture
             $ageRange = new Age();
             $ageRange->setAgeRange($age['ageRange']);
             $manager->persist($ageRange);
+            $this->addReference('age_'.$key, $ageRange);
         }
         $manager->flush();
     }

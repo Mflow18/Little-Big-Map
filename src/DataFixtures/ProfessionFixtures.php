@@ -38,6 +38,7 @@ class ProfessionFixtures extends Fixture
             $profession = new Profession();
             $profession->setName($job['name']);
             $manager->persist($profession);
+            $this->addReference('profession_'.$key, $profession);
         }
         $manager->flush();
     }
