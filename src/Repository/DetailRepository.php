@@ -2,25 +2,25 @@
 
 namespace App\Repository;
 
-use App\Entity\Hobby;
+use App\Entity\Detail;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Doctrine\Common\Persistence\ManagerRegistry;
 
 /**
- * @method Hobby|null find($id, $lockMode = null, $lockVersion = null)
- * @method Hobby|null findOneBy(array $criteria, array $orderBy = null)
- * @method Hobby[]    findAll()
- * @method Hobby[]    findBy(array $criteria, array $orderBy = null, $limit = null, $offset = null)
+ * @method Detail|null find($id, $lockMode = null, $lockVersion = null)
+ * @method Detail|null findOneBy(array $criteria, array $orderBy = null)
+ * @method Detail[]    findAll()
+ * @method Detail[]    findBy(array $criteria, array $orderBy = null, $limit = null, $offset = null)
  */
-class HobbyRepository extends ServiceEntityRepository
+class DetailRepository extends ServiceEntityRepository
 {
     public function __construct(ManagerRegistry $registry)
     {
-        parent::__construct($registry, Hobby::class);
+        parent::__construct($registry, Detail::class);
     }
 
     // /**
-    //  * @return Hobby[] Returns an array of Hobby objects
+    //  * @return Detail[] Returns an array of Detail objects
     //  */
     /*
     public function findByExampleField($value)
@@ -37,7 +37,7 @@ class HobbyRepository extends ServiceEntityRepository
     */
 
     /*
-    public function findOneBySomeField($value): ?Hobby
+    public function findOneBySomeField($value): ?Detail
     {
         return $this->createQueryBuilder('h')
             ->andWhere('h.exampleField = :val')

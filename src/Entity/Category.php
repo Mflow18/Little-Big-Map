@@ -29,14 +29,14 @@ class Category
     private $users;
 
     /**
-     * @ORM\OneToMany(targetEntity="App\Entity\Hobby", mappedBy="category")
+     * @ORM\OneToMany(targetEntity="Detail", mappedBy="category")
      */
-    private $hobbies;
+    private $details;
 
     public function __construct()
     {
         $this->users = new ArrayCollection();
-        $this->hobbies = new ArrayCollection();
+        $this->details = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -85,27 +85,27 @@ class Category
     }
 
     /**
-     * @return Collection|Hobby[]
+     * @return Collection|Detail[]
      */
     public function getHobbies(): Collection
     {
-        return $this->hobbies;
+        return $this->details;
     }
 
-    public function addHobby(Hobby $hobby): self
+    public function addHobby(Detail $hobby): self
     {
-        if (!$this->hobbies->contains($hobby)) {
-            $this->hobbies[] = $hobby;
+        if (!$this->details->contains($hobby)) {
+            $this->details[] = $hobby;
             $hobby->setCategory($this);
         }
 
         return $this;
     }
 
-    public function removeHobby(Hobby $hobby): self
+    public function removeHobby(Detail $hobby): self
     {
-        if ($this->hobbies->contains($hobby)) {
-            $this->hobbies->removeElement($hobby);
+        if ($this->details->contains($hobby)) {
+            $this->details->removeElement($hobby);
             // set the owning side to null (unless already changed)
             if ($hobby->getCategory() === $this) {
                 $hobby->setCategory(null);
