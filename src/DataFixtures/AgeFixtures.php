@@ -76,7 +76,7 @@ class AgeFixtures extends Fixture
         foreach (self::AGE as $key => $age) {
             $ageRange = new Age();
             $ageRange->setAgeRange($age['ageRange']);
-            $manager->persist($age);
+            $manager->persist($ageRange);
         }
         $manager->flush();
     }
