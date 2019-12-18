@@ -21,6 +21,11 @@ class Children
      */
     private $number;
 
+    /**
+     * @ORM\OneToOne(targetEntity="App\Entity\User", mappedBy="children", cascade={"persist", "remove"})
+     */
+    private $user;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -34,6 +39,23 @@ class Children
     public function setNumber(int $number): self
     {
         $this->number = $number;
+
+        return $this;
+    }
+
+    public function getUser(): ?User
+    {
+        return $this->user;
+    }
+
+    public function setUser(User $user): self
+    {
+        $this->user = $user;
+
+        // set the owning side of the relation if necessary
+        if ($user->getChildren() !== $this) {
+            $user->setChildren($this);
+        }
 
         return $this;
     }
