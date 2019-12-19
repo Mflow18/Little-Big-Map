@@ -21,12 +21,14 @@
             <div class="home-footer">
             {% if app.user %}
                 <h2>Voir ma Little Big Ville</h2>
+                <a href="{{ path('app_logout') }}">Me déconnecter</a>
             {% endif %}
             {% if app.user is empty %}
                 <h2>Bienvenue à Little Big City !</h2>
                 <p>Tu cherches un bon plan? Un endroit sympa pour sortir? De bonnes opportunités? Tu es au bon endroit
                     !</p>
-                <p>Clique <a href="{{ path('createaccount') }}">ici </a> pour te connecter</p>
+                <p>Clique <a href="{{ path('createaccount') }}" class="btn btn-primary">ici </a> pour créer un compte</p>
+                <p>Tu as déjà un Little Big Compte? Clique <a href="{{ path('app_login') }}" class="btn btn-primary">ici </a> pour te connecter !</p>
             {% endif %}
             </div>
         </div>
