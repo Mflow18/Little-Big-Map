@@ -1,12 +1,17 @@
+.registration-form {
+    width: 80%;
+    padding: 1em;
+    color: $primary;
+}
+
+.form-title {
+    color: $primary;
+    margin: 1em;
+}
+
 .registration-form-block {
     display: flex;
     justify-content: center;
-}
-
-.registration-form {
-    width: 50%;
-    padding: 1em;
-    color: $primary;
 }
 
 .form-item {

@@ -35,7 +35,12 @@ class UserType extends AbstractType
             ])
             ->add('firstName', TextType::class)
             ->add('lastName', TextType::class)
-            ->add('picture', TextType::class)
+            ->add(
+                'picture', TextType::class,
+                [
+                    'required' => false
+                    ]
+            )
             ->add('professions', EntityType::class,
                 [
                     'class' => Profession::class,
