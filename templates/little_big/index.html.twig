@@ -3,11 +3,24 @@
 {% block title %}Ma Little Big Ville{% endblock %}
 
 {% block body %}
-    <div class="card" style="width: 18rem;">
-        <img src="{{ app.user.picture }}" class="card-img-top" alt="Photo de profil">
-        <div class="card-body">
-            <h5 class="card-title">Salut {{ app.user.firstName}} {{ app.user.lastName }} !</h5>
-            <p class="card-text"></p>
+    <div class="profilou">
+        <h1 class="title">Hello {{ app.user.firstName }} {{ app.user.lastName }}!</h1>
+        <div class="img-wesh">
+            <img class="img-profil" src="{{ app.user.picture }}">
         </div>
     </div>
+    <div class="row">
+        {% for address in addresses %}
+            <div class="card" style="width: 18rem;">
+                <div class="card-body">
+                    <h5 class="card-title">{{ address.name }}</h5>
+                    <h6 class="card-subtitle mb-2 text-muted">{{ address.category }}</h6>
+                    <p class="card-text">{{ address.latitude~address.longitude }}</p>
+                    <a href="#" class="card-link">Card link</a>
+                    <a href="#" class="card-link">Another link</a>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+
 {% endblock %}

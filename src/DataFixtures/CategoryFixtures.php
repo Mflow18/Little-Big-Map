@@ -10,16 +10,28 @@ class CategoryFixtures extends Fixture
 {
     const CATEGORY = [
         '01' => [
-            'name' => 'Sport',
+            'name' => 'karaoke',
         ],
         '02' => [
-            'name' => 'Alimentation',
+            'name' => 'cinema',
         ],
         '03' => [
-            'name' => 'Sortie',
+            'name' => 'velo',
         ],
         '04' => [
-            'name' => 'Santé',
+            'name' => 'bar',
+        ],
+        '05' => [
+            'name' => 'association',
+        ],
+        '06' => [
+            'name' => 'concert',
+        ],
+        '07' => [
+            'name' => 'massage',
+        ],
+        '08' => [
+            'name' => 'nightclub',
         ],
     ];
 

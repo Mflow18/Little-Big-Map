@@ -83,11 +83,17 @@ class User implements UserInterface
      */
     private $irises;
 
+    /**
+     * @ORM\ManyToMany(targetEntity="App\Entity\UserAddresses", inversedBy="users")
+     */
+    private $addresses;
+
     public function __construct()
     {
         $this->professions = new ArrayCollection();
         $this->categories = new ArrayCollection();
         $this->irises = new ArrayCollection();
+        $this->addresses = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -313,6 +319,33 @@ class User implements UserInterface
     {
         if ($this->irises->contains($iris)) {
             $this->irises->removeElement($iris);
+        }
+
+        return $this;
+    }
+
+    /**
+     * @return Collection|UserAddresses[]
+     * * @ORM\JoinTable(name="user_addresses")
+     */
+    public function getAddresses(): Collection
+    {
+        return $this->addresses;
+    }
+
+    public function addAddress(UserAddresses $address): self
+    {
+        if (!$this->addresses->contains($address)) {
+            $this->addresses[] = $address;
+        }
+
+        return $this;
+    }
+
+    public function removeAddress(UserAddresses $address): self
+    {
+        if ($this->addresses->contains($address)) {
+            $this->addresses->removeElement($address);
         }
 
         return $this;

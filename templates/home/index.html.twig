@@ -20,7 +20,7 @@
             </div>
             <div class="home-footer">
             {% if app.user %}
-                <h2>Voir ma Little Big Ville</h2>
+                <h2><a href="{{ path('little_big') }}">Voir ma Little Big Ville</a></h2>
                 <a href="{{ path('app_logout') }}">Me déconnecter</a>
             {% endif %}
             {% if app.user is empty %}

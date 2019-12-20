@@ -29,12 +29,17 @@ class UserFixtures extends Fixture
         $celia->addCategory($this->getReference('category_02'));
         $celia->addCategory($this->getReference('category_03'));
         $celia->addCategory($this->getReference('category_04'));
+        $celia->addAddress($this->getReference('userAddress_01'));
+        $celia->addAddress($this->getReference('userAddress_02'));
+        $celia->addAddress($this->getReference('userAddress_03'));
+        $celia->addAddress($this->getReference('userAddress_04'));
         $celia->addIris($this->getReference('iris_01'));
         $celia->addProfession($this->getReference('profession_03'));
         $celia->setAge($this->getReference('age_07'));
         $celia->setChildren($this->getReference('children_02'));
         $celia->setFamily($this->getReference('family_04'));
         $manager->persist($celia);
+        $this->addReference('user_01', $celia);
 
         $isaure = new User();
         $isaure->setFirstName('Isaure');
